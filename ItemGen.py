@@ -1,21 +1,25 @@
-def generate_artifact_name():
-    print("Welcome to the artifact name generator based on the 'World of Cultivation' universe!")
+import random
 
-    # Ask the user to input levels for various elements and powers
-    sword_level = int(input("Please enter a level for sword scripture power (0-10): "))
-    spell_level = int(input("Please enter a level for spell talisman power (0-10): "))
-    yao_level = int(input("Please enter a level for Yao arts power (0-10): "))
-    beast_level = int(input("Please enter a level for beast soul talisman power (0-10): "))
-    mo_level = int(input("Please enter a level for Mo physique technique power (0-10): "))
+def generate_item():
+    # Lists of possible characteristics for each item attribute
+    item_types = ["Sword", "Spell Talisman", "Yao Art", "Beast Soul Talisman", "Mo Physique Technique"]
+    power_levels = ["Uknown", "Bare", "Modest", "Mild", "Ample", "Strong", "Powerful", "Mighty", "Dominant", "Imperial", "Ultimate"]
+    origins = ["Netherworld", "Kun Lun", "Tian Huan", "Nine Serenities", "Heavenly Court"]
+    special_characteristics = ["Fire attribute", "Water attribute", "Wood attribute", "Metal attribute", "Earth attribute", "Yin attribute", "Yang attribute"]
+    materials = ["Heavenly Jade", "Black Iron", "Spirit Wood", "Phoenix Feather", "Dragon Scale"]
 
-    # Assign each level a specific term
-    level_terms = {0: "Null", 1: "Bare", 2: "Modest", 3: "Mild", 4: "Ample", 
-                   5: "Strong", 6: "Powerful", 7: "Mighty", 8: "Dominant", 
-                   9: "Imperial", 10: "Ultimate"}
+    # Randomly select one characteristic from each list
+    item_type = random.choice(item_types)
+    power_level = random.choice(power_levels)
+    origin = random.choice(origins)
+    special_characteristic = random.choice(special_characteristics)
+    material = random.choice(materials)
 
-    # Generate the artifact name
-    artifact_name = f"{level_terms[sword_level]} Sword, {level_terms[spell_level]} Spell, {level_terms[yao_level]} Yao, {level_terms[beast_level]} Beast, {level_terms[mo_level]} Mo"
+    # Construct the item name
+    item_name = f"{power_level} {material} {item_type} of {origin} with {special_characteristic}"
 
-    print("The generated artifact name is:", artifact_name)
+    return item_name
 
-generate_artifact_name()
+# Generate a few items
+for _ in range(5):
+    print(generate_item())

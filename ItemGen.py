@@ -20,6 +20,52 @@ def generate_item():
 
     return item_name
 
+# Parent class for weapon type items
+class Weapon:
+    def __init__(self, power_level, origin, material):
+        self.power_level = power_level
+        self.origin = origin
+        self.material = material
+
+# Child class for swords
+class Sword(Weapon):
+    def __init__(self, power_level, origin, material, special_characteristic):
+        super().__init__(power_level, origin, material)
+        self.special_characteristic = special_characteristic
+
+
+# Parent class for Shen Power type items
+class ShenPower:
+    def __init__(self, power_level, origin):
+        self.power_level = power_level
+        self.origin = origin
+
+# Child class for Spell Talisman, Yao Art and Mo Physique Technique
+class SpellTalisman(ShenPower):
+    def __init__(self, power_level, origin, special_characteristic):
+        super().__init__(power_level, origin)
+        self.special_characteristic = special_characteristic
+
+class YaoArt(ShenPower):
+    def __init__(self, power_level, origin, special_characteristic):
+        super().__init__(power_level, origin)
+        self.special_characteristic = special_characteristic
+
+class MoPhysiqueTechnique(ShenPower):
+    def __init__(self, power_level, origin, special_characteristic):
+        super().__init__(power_level, origin)
+        self.special_characteristic = special_characteristic
+
+
 # Generate a few items
 for _ in range(5):
     print(generate_item())
+
+
+sword = Sword("Powerful", "Kun Lun", "Heavenly Jade", "Fire attribute")
+print(sword.power_level)  # Output: Powerful
+print(sword.material)  # Output: Heavenly Jade
+
+spell_talisman = SpellTalisman("Mighty", "Netherworld", "Earth attribute")
+print(spell_talisman.power_level)  # Output: Mighty
+print(spell_talisman.special_characteristic)  # Output: Earth attribute

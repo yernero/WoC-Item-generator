@@ -63,9 +63,9 @@ for _ in range(5):
 
 
 sword = Sword("Powerful", "Kun Lun", "Heavenly Jade", "Fire attribute")
-print(sword.power_level)  # Output: Powerful
-print(sword.material)  # Output: Heavenly Jade
+#print(sword.power_level)  # Output: Powerful
+#print(sword.material)  # Output: Heavenly Jade
 
 spell_talisman = SpellTalisman("Mighty", "Netherworld", "Earth attribute")
-print(spell_talisman.power_level)  # Output: Mighty
-print(spell_talisman.special_characteristic)  # Output: Earth attribute
+#print(spell_talisman.power_level)  # Output: Mighty
+#print(spell_talisman.special_characteristic)  # Output: Earth attribute
